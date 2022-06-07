@@ -96,13 +96,11 @@ class UserProfile(AbstractUser):
 class LogSearch(models.Model):
     id = models.IntegerField(primary_key=True)
     user_id = models.CharField(max_length=20)
-    type_search = models.CharField(max_length=200)
-    real_estate_type = models.CharField(max_length=200)
-    province_search = models.CharField(max_length=200)
-    district_search = models.CharField(max_length=200)
-    ward_search = models.CharField(max_length=200)
-    price_search = models.FloatField(default=0)
-    squad_search = models.CharField(max_length=100)
+    real_estate_type = models.CharField(max_length=200, null=True)
+    province_search = models.CharField(max_length=200, null=True)
+    district_search = models.CharField(max_length=200, null=True)
+    price_search = models.FloatField(default=0, null=True)
+    squad_search = models.CharField(max_length=100, null=True)
     created_at = models.DateTimeField(auto_now_add=True, db_column='created_at', blank=True, null=True,
                                       verbose_name=('Created at'))
     created_by = models.CharField(max_length=100, db_column='created_by', blank=True, null=True, default='',
@@ -113,3 +111,7 @@ class LogPosts(models.Model):
     id = models.IntegerField(primary_key=True)
     user_id = models.CharField(max_length=20)
     object_id_post = models.CharField(max_length=50)
+    province_search = models.CharField(max_length=200, null=True)
+    district_search = models.CharField(max_length=200, null=True)
+    price_search = models.FloatField(default=0, null=True)
+    squad_search = models.CharField(max_length=100, null=True)
