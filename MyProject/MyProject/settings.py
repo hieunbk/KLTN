@@ -70,7 +70,11 @@ TEMPLATES = [
     },
 ]
 
+ALLOWED_HOSTS = ['*']
+
 CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_HEADERS = ('Authorization', 'Content-Type', 'Cache-Control', 'X-Requested-With')
 
 WSGI_APPLICATION = 'MyProject.wsgi.application'
 
