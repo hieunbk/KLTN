@@ -18,10 +18,8 @@ class GuessPrice(viewsets.ViewSet):
         model.fit(squads_temp, prices)
 
         r_sq = model.score(squads_temp, prices)
-        print('coefficient of determination:', r_sq)
-        print('intercept:(b0)', model.intercept_)
-        print('slope:(b1)', model.coef_)
-        prices_pred = model.predict(squads_temp)
+
+        # prices_pred = model.predict(squads_temp)
 
         delta = mean_squared_error(squads, prices)
 

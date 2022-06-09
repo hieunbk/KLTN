@@ -4,4 +4,6 @@ from django.urls import path, include
 urlpatterns = [
     path('guess-price/', include("api.guess_price.urls")),
     path('user/', include("api.user.urls")),
+    # path('log_search/', include("api.log_search.urls")),
+    # path('log_post/', include("api.log_post.urls")),
 ]
