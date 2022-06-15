@@ -9,3 +9,9 @@ class LogSearchSerializer(serializers.Serializer):
     district_search = serializers.CharField(max_length=200)
     price_search = serializers.FloatField(default=0)
     squad_search = serializers.CharField(max_length=100)
+
+    def create(self, validated_data):
+        pass
+
+    def update(self, instance, validated_data):
+        pass

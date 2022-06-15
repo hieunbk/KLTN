@@ -40,6 +40,9 @@ class UserProfile(AbstractUser):
     updated_by = models.CharField(max_length=100, db_column='modified_by', blank=True, null=True, default='',
                                   verbose_name=('Updated by'))
 
+    class Meta:
+        db_table = "user_profile"
+
     def __str__(self):
         return self.username
 
@@ -106,12 +109,18 @@ class LogSearch(models.Model):
     created_by = models.CharField(max_length=100, db_column='created_by', blank=True, null=True, default='',
                                   verbose_name=('Created by'))
 
+    class Meta:
+        db_table = "log_search"
 
-class LogPosts(models.Model):
+
+class LogPost(models.Model):
     id = models.IntegerField(primary_key=True)
     user_id = models.CharField(max_length=20)
     object_id_post = models.CharField(max_length=50)
-    province_search = models.CharField(max_length=200, null=True)
-    district_search = models.CharField(max_length=200, null=True)
-    price_search = models.FloatField(default=0, null=True)
-    squad_search = models.CharField(max_length=100, null=True)
+    province_info = models.CharField(max_length=200, null=True)
+    district_info = models.CharField(max_length=200, null=True)
+    price_info = models.FloatField(default=0, null=True)
+    squad_info = models.CharField(max_length=100, null=True)
+
+    class Meta:
+        db_table = "log_post"

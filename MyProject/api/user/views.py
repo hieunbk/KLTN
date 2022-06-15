@@ -21,8 +21,15 @@ class UserViewSet(ViewSet):
         data = orjson.loads(request.body)
 
         username = data.get("username", None)
+        username_check = UserProfile.objects.filter(username=username).first()
+        if username_check:
+            return Response("Username is existed", status=status.HTTP_400_BAD_REQUEST)
         password = data.get("password", None)
         email = data.get("email", None)
+        email_check = UserProfile.objects.filter(email=email).first()
+        if email_check:
+            return Response("Email is existed", status=status.HTTP_400_BAD_REQUEST)
+
         gender = data.get("gender", None)
         date_of_birth = data.get("date_of_birth", None)
         identity_num = data.get("identity_num", None)
@@ -60,6 +67,9 @@ class UserViewSet(ViewSet):
         data = orjson.loads(request.body)
 
         user_id = data.get("user_id", None)
+        if not user_id:
+            return Response("Miss user id", status=status.HTTP_400_BAD_REQUEST)
+
         username = data.get("username", None)
         email = data.get("email", None)
         gender = data.get("gender", None)
@@ -98,5 +108,5 @@ class UserViewSet(ViewSet):
         if ward_info:
             user.ward_info = ward_info
         serializer_data = UserProfileSerializer(user)
-        return Response(serializer_data.data)
+        return Response(serializer_data.data, status=status.HTTP_200_OK)
     
