@@ -13,10 +13,14 @@ class LogSearchViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
+        if not request.body:
+            return Response("Data invalid", status=status.HTTP_204_NO_CONTENT)
+
         data = orjson.loads(request.body)
+
         user_id = data.get('user_id')
         if not user_id:
-            return Response("Not user id")
+            return Response("Not user id", status=status.HTTP_400_BAD_REQUEST)
         real_estate_type = data.get('real_estate_type')
         province_search = data.get('province_search')
         district_search = data.get('district_search')

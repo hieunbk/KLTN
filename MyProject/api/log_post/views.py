@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from rest_framework import status
 import orjson
 
-
 class LogPostViewSet(viewsets.ViewSet):
     def list(self, request):
         log_search = LogPost.objects.all()
@@ -14,10 +13,14 @@ class LogPostViewSet(viewsets.ViewSet):
 
 
     def create(self, request):
+        if not request.body:
+            return Response("Data invalid", status=status.HTTP_204_NO_CONTENT)
+
         data = orjson.loads(request.body)
+
         user_id = data.get('user_id')
         if not user_id:
-            return Response("Not user id")
+            return Response("Not user id", status=status.HTTP_400_BAD_REQUEST)
         object_id_post = data.get("object_id_post")
         real_estate_type = data.get('real_estate_type')
         province_info = data.get('province_info')
