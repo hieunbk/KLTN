@@ -1,0 +1,322 @@
+[
+  {
+    "value": 0,
+    "label": "All",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "01",
+    "label": "Hà Nội",
+    "unit": "Trung ương"
+  },
+  {
+    "value": "02",
+    "label": "Hà Giang",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "04",
+    "label": "Cao Bằng",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "06",
+    "label": "Bắc Kạn",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "08",
+    "label": "Tuyên Quang",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "10",
+    "label": "Lào Cai",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "11",
+    "label": "Điện Biên",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "12",
+    "label": "Lai Châu",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "14",
+    "label": "Sơn La",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "15",
+    "label": "Yên Bái",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "17",
+    "label": "Hoà Bình",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "19",
+    "label": "Thái Nguyên",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "20",
+    "label": "Lạng Sơn",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "22",
+    "label": "Quảng Ninh",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "24",
+    "label": "Bắc Giang",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "25",
+    "label": "Phú Thọ",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "26",
+    "label": "Vĩnh Phúc",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "27",
+    "label": "Bắc Ninh",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "30",
+    "label": "Hải Dương",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "31",
+    "label": "Hải Phòng",
+    "unit": "Trung ương"
+  },
+  {
+    "value": "33",
+    "label": "Hưng Yên",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "34",
+    "label": "Thái Bình",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "35",
+    "label": "Hà Nam",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "36",
+    "label": "Nam Định",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "37",
+    "label": "Ninh Bình",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "38",
+    "label": "Thanh Hóa",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "40",
+    "label": "Nghệ An",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "42",
+    "label": "Hà Tĩnh",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "44",
+    "label": "Quảng Bình",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "45",
+    "label": "Quảng Trị",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "46",
+    "label": "Thừa Thiên Huế",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "48",
+    "label": "Đà Nẵng",
+    "unit": "Trung ương"
+  },
+  {
+    "value": "49",
+    "label": "Quảng Nam",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "51",
+    "label": "Quảng Ngãi",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "52",
+    "label": "Bình Định",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "54",
+    "label": "Phú Yên",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "56",
+    "label": "Khánh Hòa",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "58",
+    "label": "Ninh Thuận",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "60",
+    "label": "Bình Thuận",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "62",
+    "label": "Kon Tum",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "64",
+    "label": "Gia Lai",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "66",
+    "label": "Đắk Lắk",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "67",
+    "label": "Đắk Nông",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "68",
+    "label": "Lâm Đồng",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "70",
+    "label": "Bình Phước",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "72",
+    "label": "Tây Ninh",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "74",
+    "label": "Bình Dương",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "75",
+    "label": "Đồng Nai",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "77",
+    "label": "Vũng Tàu",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "79",
+    "label": "Hồ Chí Minh",
+    "unit": "Trung ương"
+  },
+  {
+    "value": "80",
+    "label": "Long An",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "82",
+    "label": "Tiền Giang",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "83",
+    "label": "Bến Tre",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "84",
+    "label": "Trà Vinh",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "86",
+    "label": "Vĩnh Long",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "87",
+    "label": "Đồng Tháp",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "89",
+    "label": "An Giang",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "91",
+    "label": "Kiên Giang",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "92",
+    "label": "Cần Thơ",
+    "unit": "Trung ương"
+  },
+  {
+    "value": "93",
+    "label": "Hậu Giang",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "94",
+    "label": "Sóc Trăng",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "95",
+    "label": "Bạc Liêu",
+    "unit": "Tỉnh"
+  },
+  {
+    "value": "96",
+    "label": "Cà Mau",
+    "unit": "Tỉnh"
+  }
+]

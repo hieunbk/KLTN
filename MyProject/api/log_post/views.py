@@ -21,8 +21,8 @@ class LogPostViewSet(viewsets.ViewSet):
         user_id = data.get('user_id')
         if not user_id:
             return Response("Not user id", status=status.HTTP_400_BAD_REQUEST)
+
         object_id_post = data.get("object_id_post")
-        real_estate_type = data.get('real_estate_type')
         province_info = data.get('province_info')
         district_info = data.get('district_info')
         price_info = data.get('price_info')
@@ -31,7 +31,6 @@ class LogPostViewSet(viewsets.ViewSet):
         new_log = LogPost.objects.create(
             user_id=user_id,
             object_id_post=object_id_post,
-            real_estate_type=real_estate_type,
             province_info=province_info,
             district_info=district_info,
             price_info=price_info,
