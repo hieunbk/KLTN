@@ -55,11 +55,9 @@ class UserViewSet(ViewSet):
             ward_info=ward_info,
         )
         user.save()
-
         if not user:
             return Response("Errol", status=status.HTTP_400_BAD_REQUEST)
         return Response("Successful", status=status.HTTP_201_CREATED)
-
 
     def update(self, request, *args, **kwargs):
         if not request.body:

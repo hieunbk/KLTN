@@ -9,12 +9,7 @@ from django.db.models import Count, F, Sum, Avg
 
 
 class RecommendPostViewSet(viewsets.ViewSet):
-    def get_list_post(self, request):
-        if not request.body:
-            return Response("Data invalid", status=status.HTTP_204_NO_CONTENT)
-        data = orjson.loads(request.body)
-        user_id = data.get("user_id")
-
+    def get_list_post(self, request, user_id):
         if not user_id:
             return Response("Not user id", status=status.HTTP_400_BAD_REQUEST)
 
