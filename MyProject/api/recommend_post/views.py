@@ -13,11 +13,28 @@ class RecommendPostViewSet(viewsets.ViewSet):
         if not user_id:
             return Response("Not user id", status=status.HTTP_400_BAD_REQUEST)
 
+        user = UserProfile.objects.filter(id=user_id).first()
+        if not user:
+            return Response("User id invalid", status=status.HTTP_400_BAD_REQUEST)
+        user_province = user.province_info
+        user_district = user.district_info
+
         user_search = LogSearch.objects.filter(user_id=user_id)
+        if not user_search:
+            if user_province and user_district:
+                data_result = {
+                    "user_id": user_id,
+                    "province": user_province,
+                    "district": user_district,
+                }
+                return Response(data_result, status=status.HTTP_200_OK)
+            else:
+                Response("No information. Update your profile", status=status.HTTP_400_BAD_REQUEST)
+
         user_post = LogPost.objects.filter(user_id=user_id)
 
-        if user_post is None and user_search is None:
-            return Response("New user", status=status.HTTP_204_NO_CONTENT)
+        # if user_post is None and user_search is None:
+        #     return Response("New user", status=status.HTTP_204_NO_CONTENT)
 
         list_province_search = LogSearch.objects.filter(user_id=user_id).values('province_search'). \
                                    annotate(count_province=Count('id')).order_by('-count_province')[:3]

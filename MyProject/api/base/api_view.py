@@ -1,5 +1,5 @@
 from rest_framework.permissions import IsAuthenticated
-from authentication import TokenAuthentication
+from .authentication import TokenAuthentication
 from rest_framework.viewsets import ViewSet
 from rest_framework.exceptions import ErrorDetail
 from drf_orjson_renderer.renderers import \

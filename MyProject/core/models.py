@@ -103,7 +103,7 @@ class LogSearch(models.Model):
     province_search = models.IntegerField(null=True)
     district_search = models.IntegerField(null=True)
     price_search = models.FloatField(default=0, null=True)
-    squad_search = models.FloatField(default=0, null=True)
+    squad_search = models.CharField(max_length=100, null=True)
     created_at = models.DateTimeField(auto_now_add=True, db_column='created_at', blank=True, null=True,
                                       verbose_name=('Created at'))
     created_by = models.CharField(max_length=100, db_column='created_by', blank=True, null=True, default='',

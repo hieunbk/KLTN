@@ -4,6 +4,7 @@ from rest_framework import viewsets
 from .serializers import LogSearchSerializer
 from rest_framework.response import Response
 from rest_framework import status
+from ..base.api_view import CustomAPIView
 
 
 class LogSearchViewSet(viewsets.ViewSet):

@@ -8,7 +8,7 @@ class LogSearchSerializer(serializers.Serializer):
     province_search = serializers.IntegerField()
     district_search = serializers.IntegerField()
     price_search = serializers.FloatField(default=0)
-    squad_search = serializers.FloatField(default=0)
+    squad_search = serializers.CharField(max_length=100)
 
     def create(self, validated_data):
         pass
