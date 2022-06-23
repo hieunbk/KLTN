@@ -9,7 +9,10 @@ from ..base.api_view import CustomAPIView
 
 class LogSearchViewSet(viewsets.ViewSet):
     def list(self, request):
+        user_id = self.request.query_params.get('user_id', None)
         log_search = LogSearch.objects.all()
+        if user_id:
+            log_search = log_search.filter(user_id=user_id)
         serializer = LogSearchSerializer(log_search, many=True)
         return Response(serializer.data)
 
