@@ -42,7 +42,7 @@ class UserViewSet(ViewSet):
 
         user = UserProfile.objects.create(
             username=username,
-            password=make_password(password),
+            password=password,
             email=email,
             gender=gender,
             date_of_birth=date_of_birth,
