@@ -1,5 +1,3 @@
-from builtins import print, property
-
 import orjson
 from core.models import LogSearch, LogPost, UserProfile
 from rest_framework import viewsets
@@ -31,7 +29,7 @@ class RecommendPostViewSet(viewsets.ViewSet):
             else:
                 Response("No information. Update your profile", status=status.HTTP_400_BAD_REQUEST)
 
-        # user_post = LogPost.objects.filter(user_id=user_id)
+        # seller_record = LogSearch.objects.filter(user_id=)
 
         max_province_search = LogSearch.objects.filter(user_id=user_id).values('province_search')\
             .annotate(count_province=Count('id')).order_by('-count_province')
