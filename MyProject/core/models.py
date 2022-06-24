@@ -99,7 +99,7 @@ class UserProfile(AbstractUser):
 class LogSearch(models.Model):
     id = models.IntegerField(primary_key=True)
     user_id = models.CharField(max_length=20)
-    real_estate_type = models.IntegerField(max_length=200, null=False)
+    real_estate_type = models.IntegerField(null=False)
     province_search = models.IntegerField(null=True)
     district_search = models.IntegerField(null=True)
     price_search = models.FloatField(default=0, null=True)

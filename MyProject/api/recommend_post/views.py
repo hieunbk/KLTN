@@ -1,8 +1,5 @@
-from _csv import _reader
-
 import orjson
 from core.models import LogSearch, LogPost, UserProfile
-from django.db.models.functions import Lead
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status

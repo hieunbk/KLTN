@@ -1,13 +1,9 @@
-from django.db.migrations import serializer
 from rest_framework.viewsets import ViewSet
 from .serializers import UserProfileSerializer
 from core.models import UserProfile
-from django.contrib.auth.hashers import make_password
 from rest_framework.response import Response
 from rest_framework import status
-from django.http import Http404
 import orjson
-from django.db.models import F
 
 
 class UserViewSet(ViewSet):
