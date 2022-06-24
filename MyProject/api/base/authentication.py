@@ -103,7 +103,7 @@ class BasicAuthentication(BaseAuthentication):
         if user is None:
             raise exceptions.AuthenticationFailed("INVALID_LOGIN")
 
-        if not user.check_password(password):
+        if not user.password == password:
             raise exceptions.AuthenticationFailed("INVALID_LOGIN")
 
         # if not user.active_flag:

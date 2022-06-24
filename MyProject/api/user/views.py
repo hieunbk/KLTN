@@ -101,6 +101,7 @@ class UserViewSet(ViewSet):
             user.district_info = district_info
         if ward_info:
             user.ward_info = ward_info
+        user.save()
         serializer_data = UserProfileSerializer(user)
         return Response(serializer_data.data, status=status.HTTP_200_OK)
     
