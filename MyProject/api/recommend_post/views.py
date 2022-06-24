@@ -4,7 +4,7 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
 from django.db.models import Count, F, Sum, Avg
-from ..utils.squad_price import SELLER_TYPE, LESSOR_TYPE
+from ..utils.squad_price import SELLER_TYPE_ID, LESSOR_TYPE_ID
 
 
 class RecommendPostViewSet(viewsets.ViewSet):
@@ -12,7 +12,7 @@ class RecommendPostViewSet(viewsets.ViewSet):
         if not user_id:
             return Response("Not user id", status=status.HTTP_400_BAD_REQUEST)
 
-        real_estate_type = self.request.query_params.get('real_estate_type', None)
+        real_estate_type = int(self.request.query_params.get('real_estate_type', None))
 
         user = UserProfile.objects.filter(id=user_id).first()
         if not user:
@@ -33,10 +33,19 @@ class RecommendPostViewSet(viewsets.ViewSet):
                 Response("No information. Update your profile", status=status.HTTP_400_BAD_REQUEST)
 
         data_record = None
-        if real_estate_type == SELLER_TYPE:
-            data_record = LogSearch.objects.filter(user_id=user_id, real_estate_type=SELLER_TYPE)
-        elif real_estate_type == LESSOR_TYPE:
-            data_record = LogSearch.objects.filter(user_id=user_id, real_estate_type=LESSOR_TYPE)
+        if real_estate_type == SELLER_TYPE_ID:
+            data_record = LogSearch.objects.filter(user_id=user_id, real_estate_type=SELLER_TYPE_ID)
+        elif real_estate_type == LESSOR_TYPE_ID:
+            data_record = LogSearch.objects.filter(user_id=user_id, real_estate_type=LESSOR_TYPE_ID)
+        if data_record is None:
+            return Response({
+                "user_id": user_id,
+                "real_estate_type": None,
+                "province": None,
+                "district": None,
+                "price": None,
+                "squad": None,
+            }, status=status.HTTP_200_OK)
 
         max_province_search = data_record.filter(user_id=user_id).values('province_search') \
             .annotate(count_province=Count('id')).order_by('-count_province')
