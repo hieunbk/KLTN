@@ -8,8 +8,11 @@ import orjson
 
 class UserViewSet(ViewSet):
     def list(self, request):
-        users = UserProfile.objects.all().values()
-        return Response(users)
+        user_id = self.request.query_params.get('user_id', None)
+        users = UserProfile.objects.all()
+        if user_id:
+            users = users.filter(id=user_id)
+        return Response(users.values())
 
     def create(self, request, *args, **kwargs):
         if not request.body:
